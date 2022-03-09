@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  WrapperApp
+//  WebAppGenerator
 //
-//  Created by LIPL-227 on 09/03/22.
+//  Created by LIPL-227 on 16/02/22.
 //
 
 import Cocoa
@@ -11,8 +11,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }

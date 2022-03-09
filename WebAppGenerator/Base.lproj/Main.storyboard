@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="19162"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,11 +13,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="WrapperApp" id="1Xt-HY-uBw">
+                            <menuItem title="WebAppGenerator" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="WrapperApp" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="WebAppGenerator" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About WrapperApp" id="5kV-Vb-QxS">
+                                        <menuItem title="About WebAppGenerator" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -30,7 +31,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide WrapperApp" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide WebAppGenerator" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -48,7 +49,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit WrapperApp" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit WebAppGenerator" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -661,7 +662,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="WrapperApp Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="WebAppGenerator Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -675,7 +676,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WrapperApp" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WebAppGenerator" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -685,7 +686,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Booking.com" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -705,29 +706,76 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="WrapperApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="164"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="WebAppGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-EG-PhB">
-                                <rect key="frame" x="48" y="50" width="384" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Loading..." id="LL5-z2-2NR">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tRk-EP-zMe">
+                                <rect key="frame" x="205" y="233" width="70" height="32"/>
+                                <buttonCell key="cell" type="push" title="Home" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aTD-YC-oZD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="homeAction:" target="XfG-lQ-9wD" id="Sci-F7-wmj"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-HT-2PN">
+                                <rect key="frame" x="383" y="223" width="84" height="32"/>
+                                <buttonCell key="cell" type="push" title="Forword" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L90-BH-05Z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="forwordAction:" target="XfG-lQ-9wD" id="hiH-Z8-whx"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4yF-F7-coP">
+                                <rect key="frame" x="13" y="223" width="68" height="32"/>
+                                <buttonCell key="cell" type="push" title="Back " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gff-Fu-mUi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="backAction:" target="XfG-lQ-9wD" id="04O-05-VAu"/>
+                                </connections>
+                            </button>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-Xf-1yz">
+                                <rect key="frame" x="10" y="10" width="460" height="210"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <connections>
+                                    <outlet property="UIDelegate" destination="XfG-lQ-9wD" id="jty-R2-K5L"/>
+                                    <outlet property="navigationDelegate" destination="XfG-lQ-9wD" id="BAr-Ay-Cxj"/>
+                                </connections>
+                            </wkWebView>
+                            <progressIndicator hidden="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JgA-AL-VZh">
+                                <rect key="frame" x="232" y="220" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="6gA-EG-PhB" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="0rY-qu-Cmu"/>
-                            <constraint firstItem="6gA-EG-PhB" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="RBk-RE-fCO"/>
-                            <constraint firstAttribute="bottom" secondItem="6gA-EG-PhB" secondAttribute="bottom" constant="50" id="bq8-pE-JSw"/>
-                            <constraint firstAttribute="trailing" secondItem="6gA-EG-PhB" secondAttribute="trailing" constant="50" id="myI-kx-dHP"/>
+                            <constraint firstItem="JgA-AL-VZh" firstAttribute="centerX" secondItem="gvt-Xf-1yz" secondAttribute="centerX" id="8K7-aD-nQ7"/>
+                            <constraint firstItem="gvt-Xf-1yz" firstAttribute="top" secondItem="JgA-AL-VZh" secondAttribute="bottom" id="E8e-em-X3V"/>
+                            <constraint firstAttribute="trailing" secondItem="WfG-HT-2PN" secondAttribute="trailing" constant="20" id="Ef8-Bl-DYT"/>
+                            <constraint firstItem="4yF-F7-coP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="KXT-Jw-7oB"/>
+                            <constraint firstItem="gvt-Xf-1yz" firstAttribute="top" secondItem="4yF-F7-coP" secondAttribute="bottom" constant="10" id="Mcq-FK-uQ0"/>
+                            <constraint firstItem="tRk-EP-zMe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="TZR-0w-yiP"/>
+                            <constraint firstItem="WfG-HT-2PN" firstAttribute="top" secondItem="tRk-EP-zMe" secondAttribute="top" constant="10" id="ZaU-lJ-9Lh"/>
+                            <constraint firstAttribute="bottom" secondItem="gvt-Xf-1yz" secondAttribute="bottom" constant="10" id="bAw-UH-B6A"/>
+                            <constraint firstItem="4yF-F7-coP" firstAttribute="top" secondItem="tRk-EP-zMe" secondAttribute="top" constant="10" id="bWd-D3-h2z"/>
+                            <constraint firstItem="tRk-EP-zMe" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="eeu-bY-OnQ"/>
+                            <constraint firstAttribute="trailing" secondItem="gvt-Xf-1yz" secondAttribute="trailing" constant="10" id="hN4-9o-a5x"/>
+                            <constraint firstItem="gvt-Xf-1yz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="zPW-ee-1S3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="resultLabel" destination="6gA-EG-PhB" id="FHI-lK-qWh"/>
+                        <outlet property="backButton" destination="4yF-F7-coP" id="Zlk-QP-ED3"/>
+                        <outlet property="forButton" destination="WfG-HT-2PN" id="GNK-ht-TG0"/>
+                        <outlet property="mywebview" destination="gvt-Xf-1yz" id="7wG-Kg-AVK"/>
+                        <outlet property="progressView" destination="JgA-AL-VZh" id="T1d-WB-w8l"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
